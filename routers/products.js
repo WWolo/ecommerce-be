@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const { Product } = require('../models/product')
-const {Category} = require("../models/category");
+const { Category } = require('../models/category')
 
 const router = express.Router()
 
@@ -109,10 +109,9 @@ router.delete('/:id', (req, res) => {
           .json({ success: true, message: 'The product is delated' })
       }
 
-        return res
-          .status(404)
-          .json({ success: false, message: 'Product not found' })
-
+      return res
+        .status(404)
+        .json({ success: false, message: 'Product not found' })
     })
     .catch((err) => res.status(400).json({ success: false, error: err }))
 })

@@ -67,10 +67,9 @@ router.delete('/:id', (req, res) => {
           .status(200)
           .json({ success: true, message: 'The category is delated' })
       }
-        return res
-          .status(404)
-          .json({ success: false, message: 'Category not found' })
-      
+      return res
+        .status(404)
+        .json({ success: false, message: 'Category not found' })
     })
     .catch((err) => res.status(400).json({ success: false, error: err }))
 })

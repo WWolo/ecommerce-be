@@ -2,6 +2,8 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const authJwt = require('./helpers/jwt')
+const errorHandler = require('./helpers/error-handler')
 
 const app = express()
 
@@ -15,6 +17,8 @@ app.options('*', cors())
 // middleware
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(authJwt())
+app.use(errorHandler)
 
 // router
 const categoriesRouter = require('./routers/categories')
@@ -35,7 +39,7 @@ mongoose
     console.log('Database Connection is ready...')
   })
   .catch((err) => {
-    console.log('err :>> ', err)
+    console.log('Error :>> ', err)
   })
 
 app.listen(3000, () => {

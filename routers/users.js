@@ -113,7 +113,7 @@ router.get(`/get/count`, async (req, res) => {
     res.status(500).json({ success: false })
   }
 
-  res.send({ count: userCount }),
+  res.send({ count: userCount })
 })
 
 router.delete('/:id', (req, res) => {
