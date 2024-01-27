@@ -3,5 +3,10 @@
   "tabWidth": 2,
   "useTabs": false,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "printWidth": 90,
+  "arrowParens": "avoid",
+  "proseWrap": "always",
+  "bracketSameLine": false
 }
