@@ -18,6 +18,7 @@ app.options('*', cors())
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(authJwt())
+app.use('public/uploads', express.static(`${__dirname}public/uploads`))
 app.use(errorHandler)
 
 // router
@@ -38,7 +39,7 @@ mongoose
   .then(() => {
     console.log('Database Connection is ready...')
   })
-  .catch((err) => {
+  .catch(err => {
     console.log('Error :>> ', err)
   })
 
